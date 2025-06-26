@@ -1,0 +1,82 @@
+//La estrategia del ejercicio erradica en 2 condiciones: divisible por 1 y por si mismo
+//Para lograrlo, debo registrar esas 2 condiciones (en este caso, mediante un contador y un para)
+//Teniendo en cuenta que se conoce la cantidad a iterar, itera hasta i = num y sale.
+//Si el contador es = 2 (Implica se cumplieron ambas condiciones)
+
+Accion Es_Primo Es:
+    Ambiente
+        num, cont_primo: entero
+    
+    Proceso
+        Esc("Ingrese un número")
+        Leer(num)
+        cont_primo := 0 
+        Para i := 1 hasta N, 1, hacer:
+            Si (num mod i = 0) entonces:
+                cont_primo := cont_primo + 1
+            Fin Si
+        Fin Para
+        
+        Si (cont_primo = 2) entonces
+            Esc("El numero: ", num, "es primo.")
+        Si no 
+            Esc("El numero: ", num, "no es primo.)
+        Fin Si
+Fin Accion
+
+#Algoritmo Optimizado:
+
+Accion Es_Primo Es:
+    Ambiente
+        num, cont_primo: entero
+    
+    Proceso
+        Esc("Ingrese un número")
+        Leer(num)
+        cont_primo := 0 
+        //Se descartan los extremos, ya que se sabe que 1 y el num son divisibles. Solo se hacen las divisiones del medio.
+        //Si cont_primo es igual a 0, no se realizo ninguna división, ergo, el numero es primo.
+        Para i := 2 hasta (num - 1), 1, hacer:
+            Si (num mod i = 0) entonces:
+                cont_primo := cont_primo + 1
+            Fin Si
+        Fin Para
+        
+        Si (cont_primo = 0) entonces
+            Esc("El numero: ", num, "es primo.")
+        Si no 
+            Esc("El numero: ", num, "no es primo.)
+        Fin Si
+Fin Accion
+
+#Algoritmo Optimizado Prime:
+//Los Algoritmos anteriores contaban la cantidad de divisores de un numero,
+//Pero solo se necesita un divisor para comprobar que un numero es primo.
+
+Accion Es_Primo Es:
+    Ambiente
+        num, i: entero
+        primo: logico
+           
+    Proceso
+        Esc("Ingrese un número")
+        Leer(num)
+        primo := verdadero
+        i := 2
+        //Comienzo en 2 porque se entiende es divisible por 1, y divido por la mitad del numero. 
+        //Ya que la mitad para arriba, dejan de ser divisores del numero.
+        Mientras (i <= (n/2)) && primo hacer         
+            Si (num mod i = 0) entonces
+                //La condicion de fin del Mientras es que 'primo' sea falso, se cumple cuando el resto de la division de algun divisor sea 0.
+                primo := Falso
+            Fin Si
+
+            i := i + 1
+        Fin Mientras
+
+        Si primo entonces
+            Esc("El numero: ", num, "es primo")
+        Si no 
+            Esc("El numero: ", num, "no es primo")
+        Fin Si
+Fin Accion

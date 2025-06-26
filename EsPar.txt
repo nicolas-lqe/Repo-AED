@@ -1,0 +1,13 @@
+Accion Es_Par es:
+    Ambiente 
+        num: entero
+    Proceso
+
+    Esc("Ingrese un número para comprobar si es Par o Impar".);
+    Leer(num);
+    Si (num AND 1) = 0 entonces;
+        ESC("El número ingresado es Par".);
+    Si no 
+        ESC("El número ingresado es Impar".);
+    FIN SI
+Fin Accion

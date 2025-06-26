@@ -1,0 +1,15 @@
+Accion Producto es: 
+    Ambiente
+        num1, num2, prod: entero
+
+    Proceso
+        Esc("ingrese dos numeros para multiplicar".)
+        Leer(num1, num2)
+
+    Repetir
+        prod := prod + num1
+        num2 := num2 - 1
+    Hasta que: num2 = 0
+
+    Esc("El resultado es: ", prod)
+Fin Accion

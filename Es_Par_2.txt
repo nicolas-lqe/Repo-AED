@@ -1,0 +1,17 @@
+accion es_par_2 es:
+    Ambiente
+        num: entero
+    Proceso
+        Esc("Ingrese un numero para verifiar si es par")
+        Leer(num)
+
+        Mientras (num > 1) hacer
+            num := num - 2
+        Fin Mientras
+
+        Si (num = 1) entonces
+            Esc("El numero ingresado es impar.")
+        Si no 
+          Esc("El numero ingresado es par.") 
+        Fin Si     
+Fin Accion
