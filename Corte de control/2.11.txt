@@ -1,0 +1,22 @@
+Accion Ingreso_09 es:
+    Ambiente
+        Alumnos = Registro
+            Clave = Registro
+                sexo: ("M", "F")
+                carr: ("ISI", "IEM", "IQ", "LAR")
+                nro_leg: n(6)
+            Fin Registro
+            Fec_Ing: Fecha
+            Tot_Mat_Apro: n(2)
+        Fin Registro
+
+        Fecha = Registro
+            dia: 1...31
+            mes: 1...12
+            anio: n(4)
+        Fin Registro
+
+        tot_masc, tot_fem, tot_carr, tot_gen: entero
+        res_sexo: ("M", "F")
+        res_carr: ("ISI", "IEM", "IQ", "LAR")
+
