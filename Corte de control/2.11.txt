@@ -16,7 +16,7 @@ Accion Ingreso_09 es:
             anio: n(4)
         Fin Registro
 
-        tot_masc, tot_fem, tot_carr, tot_gen: entero
+        tot_masc_mas_20, tot_fem_mas_20, tot_mas_20, tot_masc_menos_20, tot_fem_menos_20, tot_menos_20, tot_gen: entero
         res_sexo: ("M", "F")
         res_carr: ("ISI", "IEM", "IQ", "LAR")
 
